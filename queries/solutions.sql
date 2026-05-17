@@ -1,3 +1,7 @@
+-- ========================================================
+-- MySQL HR Schema Queries Solutions
+-- ========================================================
+-- Use this script to execute your solutions against the HR database.
 
 # 1. Display Department Locations Write a query to display the department name, city, and state for all departments
 show tables;
