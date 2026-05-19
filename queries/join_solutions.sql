@@ -1,4 +1,7 @@
-
+-- ========================================================
+-- MySQL HR Schema Queries Solutions
+-- ========================================================
+-- Use this script to execute your solutions against the HR database.
 
 
 # 1. Write a query to display the first name, last name, job title, and department name for all employees.
