@@ -63,3 +63,32 @@ inner join hr.job_history j1 on e.job_id = j1.job_id
 inner join hr.jobs j2 on j1.job_id = j2.job_id;
 inner join hr.employees m on e.employee_id = m.manager_id
 where e.salary > m.salary; 
+
+# 8.Write a query to find the region name and the average salary of employees working within that region.
+
+select*from countries;
+desc employees;
+select*from departments;
+select*from locations;
+select*from countries;
+select*from regions;
+
+select avg(e.salary), r.region_name
+from hr.employees e
+inner join hr.departments d on e.department_id = d.department_id
+inner join hr.locations l ON d.location_id = l.location_id
+inner join hr.countries c ON l.country_id = c.country_id 
+inner join hr.regions r ON c.region_id = r.region_id
+group by r.region_name;
+
+# 9. Write a query to display the department name and its average salary, but only for departments where the average salary is greater than 8,000.
+
+select*from departments;
+select*from employees;
+
+select d.department_name, avg(e.salary) as Average_Salary
+from hr.departments d
+inner join hr.employees e on d.department_id = e.department_id
+group by d.department_name
+having avg(e.salary)>8000;
+
