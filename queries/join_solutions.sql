@@ -38,5 +38,28 @@ select *from employees;
 
 select e.first_name, e.last_name, e.salary as Employee_salary, m.salary as Manager_salary
 from hr.employees e
+
+# 6. Write a query to display the city name and the total number of employees working in that city.
+
+select *from locations;
+select*from employees;
+select *from departments;
+
+select count(e.employee_id) as Total_Employees , l.city
+from hr.employees e
+inner join hr.departments d on e.department_id = d.department_id
+inner join hr.locations l on d.location_id = l.location_id
+group by l.city;
+
+# 7. Assuming data exists in a history table, write a query to display the employee ID, their old job title (from history), and their current job title (from the core employees table).
+
+show tables;
+select *from job_history;
+select *from jobs;
+
+select e.employee_id, j2.job_title
+from hr.employees e
+inner join hr.job_history j1 on e.job_id = j1.job_id
+inner join hr.jobs j2 on j1.job_id = j2.job_id;
 inner join hr.employees m on e.employee_id = m.manager_id
 where e.salary > m.salary; 
