@@ -42,12 +42,6 @@ USE HR;
 
 
 
--- 8. Employees Hired Before Their Managers
--- Write a query to identify all employees who have a hire date that is earlier than their manager's hire date.
--- Target Tables: EMPLOYEES (Self-Join)
-
-
-
 -- 9. Departments with High Average Salaries (Aggregation & Filtering)
 -- Write a query to display the department name and its average salary, but only for departments where the average salary is greater than 8,000.
 -- Target Tables: DEPARTMENTS, EMPLOYEES
